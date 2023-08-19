@@ -28,9 +28,9 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr class="alert" role="alert" *ngFor="let item of items; let i = index">
+                        <tr class="alert" role="alert" *ngFor="let item of items; let i = index" [ngClass]="{'completed': item.status === 'Completed'}">
                             <td>
-                                    <input type="checkbox"> 
+                                    <input type="checkbox" [(ngModel)]="item.status" (change)="updateStatus(item)" [disabled]="item.status === 'Completed'"> 
                             </td>
                           <td class="d-flex align-items-center">
                              
@@ -39,7 +39,7 @@
                             
                               </div>
                           </td>
-                          <td>{{ item.description }}</td>
+                          <td [ngClass]="{'completed-task': item.status === 'Completed'}">{{ item.description }}</td>
                           <td class="status"><span class="active" *ngIf="item.status == 'Completed'">Completed</span>
                             <span class="waiting" *ngIf="item.status == 'Ongoing'">Ongoing</span></td>     
                          

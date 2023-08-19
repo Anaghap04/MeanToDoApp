@@ -8297,3 +8297,17 @@ h1, h2, h3, h4, h5,
   color: #40bfc1; }
   .checkbox-primary input:checked ~ .checkmark:after {
     color: #40bfc1; }
+/* Add a class for completed items */
+.completed-task {
+  text-decoration: line-through;
+}
+
+/* Optional styling for the completed status text */
+.status .active {
+  color: green;
+}
+
+/* Optional styling for the ongoing status text */
+.status .waiting {
+  color: orange;
+}

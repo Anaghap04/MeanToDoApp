@@ -39,4 +39,12 @@ export class HomeComponent implements OnInit{
       }
     );  
   }
+
+  updateStatus(item: any) {
+    if (item.status === 'Completed') {
+      item.status = 'Ongoing';
+    } else {
+      item.status = 'Completed';
+    }
+  }
 }
