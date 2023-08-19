@@ -1,0 +1,41 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <div class="" id="myModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+      
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      <form #add="ngForm" (ngSubmit)="addtodoList()">
+                        <div class="mb-3 mt-3">
+                          <label for="name" class="form-label">Description</label>
+                          <textarea class="form-control" id="description"
+                            placeholder="Add description here" name="description" [(ngModel)]="todoDetails.description"></textarea>
+                        </div>
+                        <div class="mb-3">
+                          <label for="area" class="form-label">Status</label>
+                          <select class="form-control" id="status" name="status" placeholder="Select" [(ngModel)]="todoDetails.status">
+                            <option value="">Select here</option>
+                            <option>Completed</option>
+                            <option>Ongoing</option>
+                            </select>      
+                        </div>
+                       
+                        <button  type="submit" class="btn btn-primary">Submit</button> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <button type="submit" class="btn btn-danger" [routerLink]="['/']">Cancel</button>
+                      </form>
+                    </div>
+      
+                    <!-- Modal footer -->
+      
+                  </div>
+                </div>
+              </div>
+
+            </div>
+     </div>
+</div>
+

@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-2"></div>
+          <div class="col-2"></div>
+          <div class="col-2"></div>
+          <div class="col-2"></div>
+<div class="col-2 btn btn-info" [routerLink]="['/add-details']">Add ToDoList Details</div>
+          <div class="col-2"></div>
+        </div>
+<section class="ftco-section">
+    <form>
+      <div class="d-flex">
+        
+      </div>
+    </form>
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-wrap">
+                    <table class="table table-responsive-xl">
+                      <thead>
+                        <tr>
+                        <th></th>
+                        <th>Id</th>
+                        <th>&nbsp;&nbsp;&nbsp;Desscription</th>
+                          <th>Status</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="alert" role="alert" *ngFor="let item of items; let i = index">
+                            <td>
+                                    <input type="checkbox"> 
+                            </td>
+                          <td class="d-flex align-items-center">
+                             
+                              <div class="pl-3 email">
+                                  <span>{{ i + 1 }}</span>
+                            
+                              </div>
+                          </td>
+                          <td>{{ item.description }}</td>
+                          <td class="status"><span class="active" *ngIf="item.status == 'Completed'">Completed</span>
+                            <span class="waiting" *ngIf="item.status == 'Ongoing'">Ongoing</span></td>     
+                         
+                          <td>
+                            &nbsp;&nbsp;<i class="bi-trash-fill" (click)="deletetodoList(item._id)"></i></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="assets/jquery.min.js"></script>
+<script src="assets/js/popper.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/main.js"></script>
